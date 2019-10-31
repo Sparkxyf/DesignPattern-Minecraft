@@ -34,10 +34,10 @@ public class SmelterCommandImpl extends SmelterCommand{
                 break;
         }
 
-        //工具列表增添工具
-        MiningToolsBuilder builder = new MiningToolsBuilderImpl();
-        MiningToolsDirector director = new MiningToolsDirector(builder);
-        MiningTool tool = director.construct(toolName);
+        MiningToolsBuilderImpl builder = new MiningToolsBuilderImpl();
+        builder.buildName(toolName);
+        builder.buildDurability();
+        MiningTool tool = builder.getResult();
         backpack.addTool(tool);
 
         System.out.println("制造成功！");

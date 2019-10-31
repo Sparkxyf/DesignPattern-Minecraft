@@ -5,9 +5,6 @@ package design.mine.mine;
  */
 public class Mine {
 
-
-
-
     private UseToolsService strategy;
 
     public UseToolsService getStrategy() {

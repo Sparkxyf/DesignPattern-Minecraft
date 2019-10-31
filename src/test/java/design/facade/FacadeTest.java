@@ -19,6 +19,8 @@ public class FacadeTest {
     public void removeToolTest() {
         BackpackFacadeImpl backpackFacade = new BackpackFacadeImpl();
         int index = 0;
+        MiningTool tool = new MiningTool();
+        backpackFacade.getToolList().add(tool);
         backpackFacade.removeTool(index);
     }
 

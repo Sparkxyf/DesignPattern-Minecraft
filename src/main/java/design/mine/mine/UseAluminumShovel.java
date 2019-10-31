@@ -33,7 +33,8 @@ public class UseAluminumShovel extends UseToolsServiceMineralImpl {
             if (durability - 8 >= 0) {
                 tool.setDurability(durability - 8);
                 System.out.println("当前工具耐久度为：" + tool.getDurability());
-            } else{
+            }
+            if(tool.getDurability() == 0){
                 System.out.println("该工具使用过度，已经损坏。");
                 backpack.removeTool(index);
             }
@@ -85,7 +86,7 @@ public class UseAluminumShovel extends UseToolsServiceMineralImpl {
             return;
         }
         System.out.println("当前工具耐久度为：" + tool.getDurability());
-        if(tool.getDurability() >= 0 && isIron) {
+        if(tool.getDurability() > 0 && isIron) {
             System.out.println("使用工具中......");
             System.out.println("工具使用完毕！");
             useDurability();

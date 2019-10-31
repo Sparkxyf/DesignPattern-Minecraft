@@ -1,6 +1,7 @@
 package design.mine.tool;
 
 public class MiningToolsBuilderImpl implements MiningToolsBuilder{
+    private MiningTool miningTool = new MiningTool();
 
     @Override
     public void buildName(String n) {

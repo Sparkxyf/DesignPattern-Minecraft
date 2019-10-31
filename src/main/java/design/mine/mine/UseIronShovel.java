@@ -39,7 +39,8 @@ public class UseIronShovel extends UseToolsServiceMineralImpl {
                 //设定每次使用减少10耐久度
                 tool.setDurability(durability - 10);
                 System.out.println("当前工具耐久度为：" + tool.getDurability());
-            } else{
+            }
+            if(tool.getDurability() == 0){
                 System.out.println("该工具使用过度，已经损坏。");
                 backpack.removeTool(index);
             }
@@ -76,15 +77,6 @@ public class UseIronShovel extends UseToolsServiceMineralImpl {
                     backpack.addMineral("铁矿", addIron);
                 }
             }
-            System.out.println("当前背包含有的矿石为：");
-            Iterator iter2 = mineralList.entrySet().iterator();
-            while (iter2.hasNext()) {
-                Map.Entry entry = (Map.Entry) iter2.next();
-                Object key = entry.getKey();
-                Object value = entry.getValue();
-                System.out.println(key);
-                System.out.println(value);
-            }
             System.out.println("成功生成" + addIron + "单位铁矿石！");
         }
     }
@@ -101,7 +93,7 @@ public class UseIronShovel extends UseToolsServiceMineralImpl {
             return;
         }
         System.out.println("当前工具耐久度为：" + tool.getDurability());
-        if(tool.getDurability() >= 0 && isIron) {
+        if(tool.getDurability() > 0 && isIron) {
             System.out.println("使用工具中......");
             System.out.println("工具使用完毕！");
             useDurability();
