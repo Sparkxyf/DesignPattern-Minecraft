@@ -60,10 +60,13 @@ public class App {
                     //熔炉室逻辑
                     break;
                 case "6":
+                    HomeInit.mission.operation();
                     //任务系统逻辑
                     break;
                 case "7":
                     Clock.getInstance().updateState(1);
+                    HomeInit.daily.updateState();
+                    HomeInit.mission.setDaily();
                     break;
                 default:
                     System.out.println("输入不合法，请重试");
