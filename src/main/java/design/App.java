@@ -3,8 +3,13 @@ package design;
 
 import java.util.*;
 import design.auxiliary.*;
+import design.farm.Clock;
+import design.farm.FarmInterface;
+import design.farm.FarmInterfaceImpl;
 
 public class App {
+
+    private static FarmInterface farm = new FarmInterfaceImpl();
 
     public static void main(String[] args) {
 
@@ -46,7 +51,7 @@ public class App {
                     //进入矿区逻辑
                     break;
                 case "3":
-                    //进入农场逻辑
+                    farm.exec();
                     break;
                 case "4":
                     (new SweetHome()).main();
@@ -58,7 +63,7 @@ public class App {
                     //任务系统逻辑
                     break;
                 case "7":
-                    //下一天逻辑
+                    Clock.getInstance().updateState(1);
                     break;
                 default:
                     System.out.println("输入不合法，请重试");

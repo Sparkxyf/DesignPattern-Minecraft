@@ -1,4 +1,4 @@
-package design.patterns;
+package design.farm;
 
 import lombok.Getter;
 
@@ -11,7 +11,7 @@ public abstract class Observed<T> {
 
     @Getter protected T state;
 
-    public UpdateObserver addOnUpdateObserver(UpdateObserver observer) {
+    UpdateObserver addOnUpdateObserver(UpdateObserver observer) {
         observers.add(observer);
         return observer;
     }
