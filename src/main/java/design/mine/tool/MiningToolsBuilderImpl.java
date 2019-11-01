@@ -1,3 +1,4 @@
+
 package design.mine.tool;
 
 public class MiningToolsBuilderImpl implements MiningToolsBuilder{
@@ -20,3 +21,4 @@ public class MiningToolsBuilderImpl implements MiningToolsBuilder{
         return miningTool;
     }
 }
+

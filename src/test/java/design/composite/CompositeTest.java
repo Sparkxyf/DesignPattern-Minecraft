@@ -16,12 +16,10 @@ public class CompositeTest {
 
     @Test
     public void removeTest() {
-
         MiningToolsCompositeImpl miningToolsComposite = new MiningToolsCompositeImpl();
         MiningToolsBuilder builder = new MiningToolsBuilderImpl();
-        builder.buildDurability();
-        builder.buildName("铁镐");
-        MiningTool tool = builder.getResult();
+        MiningToolsDirector director = new MiningToolsDirector(builder);
+        MiningTool tool = director.construct("铁镐");
         miningToolsComposite.add(tool);
 
         int index = 0;

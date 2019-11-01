@@ -1,3 +1,4 @@
+
 package design.mine.smelter;
 
 import design.mine.backpack.BackpackFacadeImpl;
@@ -42,4 +43,5 @@ public class SmelterCommandImpl extends SmelterCommand{
 
         System.out.println("制造成功！");
     }
+
 }
