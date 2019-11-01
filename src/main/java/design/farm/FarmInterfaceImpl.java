@@ -13,23 +13,35 @@ public class FarmInterfaceImpl implements FarmInterface {
     public void exec() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("1. 查看所有农场");
-        System.out.println("2. 新建农场");
-        System.out.println("3. 返回");
+        System.out.println("======================================");
+        System.out.println("*          1. 查看所有农场            *");
+        System.out.println("*            2. 新建农场              *");
+        System.out.println("*              3. 退出                *");
+        System.out.println("======================================");
         System.out.println("请选择：");
 
         while(scanner.hasNext()) {
             switch (scanner.next()) {
                 case "1":
-                    for(int i = 0; i< farmLandList.size(); ++i) {
-                        System.out.println(
-                                (i + 1) +
-                                        ":" +
-                                        farmLandList.get(i).stringify());
+                    System.out.println("======================================");
+                    if(farmLandList.size()==0){
+                        System.out.println("*         你的土地上没有农场          *");
                     }
-                    System.out.println("输入序号查看农场");
-                    System.out.println("输入0返回");
+                    else{
+                        for(int i = 0; i< farmLandList.size(); ++i) {
+                            System.out.println("*          "+
+                                    (i + 1) +
+                                            ":" +
+                                            farmLandList.get(i).stringify()+"          *");
+                        }
+                    }
+
+                    System.out.println("======================================");
+                    System.out.println("*          输入序号查看农场           *");
+                    System.out.println("*              输入0退出              *");
+                    System.out.println("======================================");
                     System.out.println("请选择：");
+
                     while(scanner.hasNext()) {
                         String next = scanner.next();
                         try {
@@ -48,37 +60,47 @@ public class FarmInterfaceImpl implements FarmInterface {
                     }
                     break;
                 case "2":
-                    System.out.println("输入1创建菜地，2创建牧场");
-                    System.out.println("输入0返回");
+
+                    System.out.println("======================================");
+                    System.out.println("*            1. 创建菜地              *");
+                    System.out.println("*            2. 创建牧场              *");
+                    System.out.println("*              3. 退出                *");
+                    System.out.println("======================================");
                     System.out.println("请选择：");
                     if(scanner.hasNext()) {
                         FarmLand newFarmland;
                         switch (scanner.next()) {
                             case "1":
-                                newFarmland = Field.creator.create();
+                                newFarmland = FarmlandAbstractFactory.getFactory(Field.class).createFarmland();
+                                newFarmland.farms = this;
+                                farmLandList.add(newFarmland);
+                                System.out.println("添加成功");
                                 break;
                             case "2":
-                                newFarmland  = Farm.creator.create();
+                                newFarmland = FarmlandAbstractFactory.getFactory(Farm.class).createFarmland();
+                                newFarmland.farms = this;
+                                farmLandList.add(newFarmland);
+                                System.out.println("添加成功");
                                 break;
-                            case "0":
-                                continue;
+                            case "3":
+                                break;
                             default:
                                 System.out.println("输入有误");
                                 continue;
                         }
-                        newFarmland.farms = this;
-                        farmLandList.add(newFarmland);
-                        System.out.println("添加成功");
+
                     }
                     break;
-                case "0":
+                case "3":
                     return;
                 default:
                     System.out.println("输入有误，请重试。");
             }
-            System.out.println("1. 查看所有农场");
-            System.out.println("2. 新建农场");
-            System.out.println("3. 返回");
+            System.out.println("======================================");
+            System.out.println("*          1. 查看所有农场            *");
+            System.out.println("*            2. 新建农场              *");
+            System.out.println("*              3. 退出                *");
+            System.out.println("======================================");
             System.out.println("请选择：");
         }
     }

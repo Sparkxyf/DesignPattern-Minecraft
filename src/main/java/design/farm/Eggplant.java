@@ -1,17 +1,17 @@
 package design.farm;
 
-public class Cow extends Animal {
+public class Eggplant extends Plant {
     @Override
     public String stringify() {
         if(this.state instanceof GrownState) {
-            return "成年牛";
+            return "大茄子";
         }
-        return "小牛";
+        return "小茄子";
     }
 
     @Override
     protected void init() {
-        grownAge = 3;
+        grownAge = 2;
         super.init();
     }
 }

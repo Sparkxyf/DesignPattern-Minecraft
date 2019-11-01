@@ -9,13 +9,15 @@ public abstract class Animal {
         init();
     }
 
-    abstract String stringify();
+    public abstract String stringify();
 
     @Setter @Getter
     protected FarmLand belongTo = null;
 
+    @Getter
     private Integer birthDate = Clock.getInstance().getState();
 
+    @Getter
     Integer grownAge = Integer.MAX_VALUE;
 
     protected State state = new CubState();

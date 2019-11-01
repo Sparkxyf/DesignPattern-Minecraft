@@ -16,6 +16,7 @@ public class Clock extends Observed<Integer> {
         if(change instanceof Integer) {
             Integer intChange = (Integer)change;
             state += intChange;
+            update();
             return true;
         }
         return false;

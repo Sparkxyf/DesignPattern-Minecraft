@@ -6,7 +6,7 @@ public abstract class AbstractFactory {
 
     public abstract <T extends Plant> Plant createPlant(Class<T> type);
 
-    static AbstractFactory getFactory(Class type) {
+    static public AbstractFactory getFactory(Class type) {
         if(Animal.class.isAssignableFrom(type)) {
             return new AnimalFactory();
         }
