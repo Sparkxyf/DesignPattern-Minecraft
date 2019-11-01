@@ -7,6 +7,7 @@ import design.farm.Clock;
 import design.farm.FarmInterface;
 import design.farm.FarmInterfaceImpl;
 
+
 public class App {
 
     private static FarmInterface farm = new FarmInterfaceImpl();
@@ -64,6 +65,7 @@ public class App {
                     break;
                 case "7":
                     Clock.getInstance().updateState(1);
+
                     break;
                 default:
                     System.out.println("输入不合法，请重试");
