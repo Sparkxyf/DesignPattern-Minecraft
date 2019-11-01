@@ -1,3 +1,4 @@
+
 package design.mine.tool;
 
 public interface MiningToolsBuilder {
@@ -5,3 +6,4 @@ public interface MiningToolsBuilder {
     void buildDurability();
     MiningTool getResult();
 }
+

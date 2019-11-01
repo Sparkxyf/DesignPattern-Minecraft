@@ -8,7 +8,9 @@ public class SpringFestival extends Decoration {
 
     @Override
     public void show() {
+
         setDecoration();
+
         super.show();
     }
 
