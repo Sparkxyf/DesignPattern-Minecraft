@@ -43,7 +43,7 @@ public class SweetHome {
             System.out.println("=============你回到了家===============");
             System.out.println("======================================");
             System.out.println("*            1. 装饰地毯             *");
-            System.out.println("*            2. 装饰屋子             *");
+            System.out.println("*            2. 装修屋子             *");
             System.out.println("*         3. 查看/修改留言板         *");
             System.out.println("*              4. 退出               *");
             System.out.println("======================================");
