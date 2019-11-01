@@ -31,8 +31,8 @@ public class App {
         System.out.println("*          1. 进入矿区                 *");
         System.out.println("*          2. 进入农场                 *");
         System.out.println("*          3. 回家                     *");
-        System.out.println("*          4. 进入任务系统             *");
-        System.out.println("*          5. 进入下一天               *");
+        System.out.println("*          4. 进入任务系统              *");
+        System.out.println("*          5. 进入下一天                *");
         System.out.println("*          0. 退出                     *");
         System.out.println("======================================");
         System.out.println("请选择：");
@@ -73,14 +73,12 @@ public class App {
             }
 
             System.out.println("======================================");
-            System.out.println("*          1. 查看背包物品             *");
-            System.out.println("*          2. 进入矿区                 *");
-            System.out.println("*          3. 进入农场                 *");
-            System.out.println("*          4. 回家                     *");
-            System.out.println("*          5. 进入熔炉室               *");
-            System.out.println("*          6. 进入任务系统             *");
-            System.out.println("*          7. 进入下一天               *");
-            System.out.println("*          0. 退出                     *");
+            System.out.println("*          1. 进入矿区                 *");
+            System.out.println("*          2. 进入农场                 *");
+            System.out.println("*          3. 回家                    *");
+            System.out.println("*          4. 进入任务系统             *");
+            System.out.println("*          5. 进入下一天               *");
+            System.out.println("*          0. 退出                    *");
             System.out.println("======================================");
             System.out.println("请选择：");
         }

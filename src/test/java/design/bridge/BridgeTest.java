@@ -11,6 +11,7 @@ public class BridgeTest {
         Trolley trolley = new BigTrolley();
         trolley.setType(type);
         String name = trolley.getSize();
+        System.out.println("当前玩家选择的矿车为：");
         System.out.println(name);
     }
 
@@ -20,6 +21,7 @@ public class BridgeTest {
         Trolley trolley = new BigTrolley();
         trolley.setType(type);
         String name = trolley.getSize();
+        System.out.println("当前玩家选择的矿车为：");
         System.out.println(name);
     }
 
@@ -29,6 +31,7 @@ public class BridgeTest {
         Trolley trolley = new BigTrolley();
         trolley.setType(type);
         String name = trolley.getSize();
+        System.out.println("当前玩家选择的矿车为：");
         System.out.println(name);
     }
 
@@ -38,6 +41,7 @@ public class BridgeTest {
         Trolley trolley = new BigTrolley();
         trolley.setType(type);
         String name = trolley.getSize();
+        System.out.println("当前玩家选择的矿车为：");
         System.out.println(name);
     }
 
@@ -47,6 +51,7 @@ public class BridgeTest {
         Trolley trolley = new SmallTrolley();
         trolley.setType(type);
         String name = trolley.getSize();
+        System.out.println("当前玩家选择的矿车为：");
         System.out.println(name);
     }
 
@@ -56,6 +61,7 @@ public class BridgeTest {
         Trolley trolley = new SmallTrolley();
         trolley.setType(type);
         String name = trolley.getSize();
+        System.out.println("当前玩家选择的矿车为：");
         System.out.println(name);
     }
 
@@ -65,6 +71,7 @@ public class BridgeTest {
         Trolley trolley = new SmallTrolley();
         trolley.setType(type);
         String name = trolley.getSize();
+        System.out.println("当前玩家选择的矿车为：");
         System.out.println(name);
     }
 
@@ -74,6 +81,7 @@ public class BridgeTest {
         Trolley trolley = new SmallTrolley();
         trolley.setType(type);
         String name = trolley.getSize();
+        System.out.println("当前玩家选择的矿车为：");
         System.out.println(name);
     }
 }

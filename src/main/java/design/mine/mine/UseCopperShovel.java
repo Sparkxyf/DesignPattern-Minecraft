@@ -30,6 +30,8 @@ public class UseCopperShovel extends UseToolsServiceMineralImpl {
 //    }
 
     public void useDurability(){
+
+        tool = findTool(tools.getMiningToolsList());
         if(tool != null) {
             int durability = tool.getDurability();
             if (durability - 10 >= 0) {
@@ -84,7 +86,7 @@ public class UseCopperShovel extends UseToolsServiceMineralImpl {
         boolean isIron = chooseMineral("铜矿区");
         tool = findTool(tools.getMiningToolsList());
         if (tool == null) {
-            System.out.println("没有可用的工具，自动离开。");
+            System.out.println("没有可用的铜镐，自动离开。");
             return;
         }
         System.out.println("当前工具耐久度为：" + tool.getDurability());

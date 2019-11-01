@@ -3,6 +3,7 @@ package design.observer;
 
 import design.mine.backpack.BackpackFacadeImpl;
 import design.mine.smelter.SmelterObserverImpl;
+import org.junit.Before;
 import org.junit.Test;
 
 import design.farm.*;
@@ -13,6 +14,9 @@ import design.task.observer.WeekObserver;
 
 
 public class ObserverTest {
+    private BackpackFacadeImpl backpackFacade = new BackpackFacadeImpl();
+    private String mineName;
+
     @Test
     public void test(){
         Daily daily=new Daily();
@@ -31,19 +35,19 @@ public class ObserverTest {
         weekObserver.show();
 
     }
-    private BackpackFacadeImpl backpackFacade = new BackpackFacadeImpl();
 
-    @Test
-    public void judgeMineListTest() {
-        SmelterObserverImpl smelterObserver = new SmelterObserverImpl(backpackFacade);
-        smelterObserver.judgeMineList(backpackFacade.getMineralList(), "铁矿");
+
+    @Before
+    public void init() {
+        mineName ="铁矿";
     }
 
     @Test
-    public void operateTest() {
+    public void observeTest() {
         SmelterObserverImpl smelterObserver = new SmelterObserverImpl(backpackFacade);
-        smelterObserver.operate("铁矿");
+        smelterObserver.operate(mineName);
     }
+
 
     @Test
     public void clockTest(){

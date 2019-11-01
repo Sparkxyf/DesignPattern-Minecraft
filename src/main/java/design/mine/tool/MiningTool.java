@@ -19,4 +19,9 @@ public class MiningTool {
     public void setDurability(int d){
         durability = d;
     }
+
+    public void show(){
+        System.out.println("该工具的名称被设置为：" + name);
+        System.out.println("该工具的耐久度被设置为：" + durability);
+    }
 }

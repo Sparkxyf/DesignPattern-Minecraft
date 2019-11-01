@@ -1,4 +1,3 @@
-
 package design.mine.smelter;
 
 import design.mine.backpack.BackpackFacadeImpl;
@@ -12,6 +11,8 @@ public class SmelterCommandImpl extends SmelterCommand{
     }
 
     public void forgeTools(String mineName){
+        System.out.println("接到指令开始处理。");
+
         //矿石列表减少矿石
         String toolName = "";
         switch (mineName){
@@ -35,13 +36,12 @@ public class SmelterCommandImpl extends SmelterCommand{
                 break;
         }
 
+        //工具列表增添工具
         MiningToolsBuilderImpl builder = new MiningToolsBuilderImpl();
-        builder.buildName(toolName);
-        builder.buildDurability();
-        MiningTool tool = builder.getResult();
+        MiningToolsDirector director = new MiningToolsDirector(builder);
+        MiningTool tool = director.construct(toolName);
         backpack.addTool(tool);
 
         System.out.println("制造成功！");
     }
-
 }

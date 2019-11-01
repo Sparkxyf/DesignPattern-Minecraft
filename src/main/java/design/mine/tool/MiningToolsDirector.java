@@ -1,15 +1,16 @@
 package design.mine.tool;
 
 public class MiningToolsDirector {
-    private MiningToolsBuilder toolBuilder;
+    private MiningToolsBuilderImpl builder;
 
-    public MiningToolsDirector(MiningToolsBuilder builder){
-        toolBuilder = builder;
+    public MiningToolsDirector(MiningToolsBuilderImpl b){
+        builder = b;
     }
 
-    public MiningTool construct(String name){
-        toolBuilder.buildName(name);
-        toolBuilder.buildDurability();
-        return toolBuilder.getResult();
+    public MiningTool construct(String n){
+        System.out.println("确认工具为" + n + "，开始锻造。");
+        builder.buildName(n);
+        builder.buildDurability();
+        return builder.getResult();
     }
 }
