@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class TaskWorker {
+
     TaskBusinessDelegate taskBusinessDelegate;
 
     public void doTask(MyHomeInterface home){
