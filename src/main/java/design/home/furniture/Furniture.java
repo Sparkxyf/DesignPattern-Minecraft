@@ -10,8 +10,9 @@ import lombok.ToString;
 @Setter
 @Getter
 public class Furniture {
+    private String type;
     private String texture;
     private String name;
-    private String type;
+
 
 }
