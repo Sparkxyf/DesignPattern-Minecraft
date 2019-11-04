@@ -29,12 +29,14 @@ public class UseDiamondShovel extends UseToolsServiceGemImpl {
 
     public void useDurability(){
 
+        tool = findTool(tools.getMiningToolsList());
         if(tool != null) {
             int durability = tool.getDurability();
             if (durability - 20 >= 0) {
                 tool.setDurability(durability - 20);
                 System.out.println("当前工具耐久度为：" + tool.getDurability());
-            } else{
+            }
+            if(tool.getDurability() == 0){
                 System.out.println("该工具使用过度，已经损坏。");
                 backpack.removeTool(index);
             }
@@ -94,12 +96,12 @@ public class UseDiamondShovel extends UseToolsServiceGemImpl {
         boolean isDiamond = chooseMineral("钻石矿区");
         tool = findTool(tools.getMiningToolsList());
         if (tool == null) {
-            System.out.println("没有可用的工具，自动离开。");
+            System.out.println("没有可用的钻石镐，自动离开。");
             return;
         }
 
         System.out.println("当前工具耐久度为：" + tool.getDurability());
-        if(tool.getDurability() >= 0 && isDiamond) {
+        if(tool.getDurability() > 0 && isDiamond) {
             System.out.println("使用钻石镐中......");
             System.out.println("工具使用完毕！");
             useDurability();

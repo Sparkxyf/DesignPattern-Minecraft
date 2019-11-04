@@ -12,13 +12,13 @@ public abstract class Plant {
     @Getter
     protected FarmLand belongTo = null;
 
-    abstract String stringify();
+    public abstract String stringify();
 
     private Integer birthDate = Clock.getInstance().getState();
 
     Integer grownAge = Integer.MAX_VALUE;
 
-    private State state = new SeedlingState();
+    protected State state = new SeedlingState();
 
     protected void init() {
         Clock.getInstance().addOnUpdateObserver(observed -> {

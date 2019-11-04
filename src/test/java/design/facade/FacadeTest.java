@@ -1,10 +1,10 @@
+
 package design.facade;
 
 import design.mine.backpack.BackpackFacadeImpl;
 import org.junit.Test;
 import design.mine.tool.MiningTool;
 
-import static org.junit.Assert.*;
 
 public class FacadeTest {
 
@@ -19,6 +19,8 @@ public class FacadeTest {
     public void removeToolTest() {
         BackpackFacadeImpl backpackFacade = new BackpackFacadeImpl();
         int index = 0;
+        MiningTool tool = new MiningTool();
+        backpackFacade.getToolList().add(tool);
         backpackFacade.removeTool(index);
     }
 
@@ -33,4 +35,5 @@ public class FacadeTest {
         BackpackFacadeImpl backpackFacade = new BackpackFacadeImpl();
         backpackFacade.removeMineral("铁矿", 1);
     }
+
 }

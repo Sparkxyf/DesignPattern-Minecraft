@@ -6,11 +6,12 @@ import design.auxiliary.*;
 import design.farm.Clock;
 import design.farm.FarmInterface;
 import design.farm.FarmInterfaceImpl;
-
+import design.mine.MiningArea;
 
 public class App {
 
     private static FarmInterface farm = new FarmInterfaceImpl();
+    private static MiningArea miningArea = new MiningArea();
 
     public static void main(String[] args) {
 
@@ -27,13 +28,11 @@ public class App {
         System.out.println("======================================");
         System.out.println("======= Welcome to Minecraft! ========");
         System.out.println("======================================");
-        System.out.println("*          1. 查看背包物品             *");
-        System.out.println("*          2. 进入矿区                 *");
-        System.out.println("*          3. 进入农场                 *");
-        System.out.println("*          4. 回家                     *");
-        System.out.println("*          5. 进入熔炉室               *");
-        System.out.println("*          6. 进入任务系统             *");
-        System.out.println("*          7. 进入下一天               *");
+        System.out.println("*          1. 进入矿区                 *");
+        System.out.println("*          2. 进入农场                 *");
+        System.out.println("*          3. 回家                     *");
+        System.out.println("*          4. 进入任务系统              *");
+        System.out.println("*          5. 进入下一天                *");
         System.out.println("*          0. 退出                     *");
         System.out.println("======================================");
         System.out.println("请选择：");
@@ -46,26 +45,23 @@ public class App {
                     System.out.println("再见～");
                     break mainMenuLoop;
                 case "1":
-                    //查看背包物品逻辑
+                    //进入矿区逻辑
+                    miningArea.exec();
                     break;
                 case "2":
-                    //进入矿区逻辑
-                    break;
-                case "3":
                     farm.exec();
                     break;
-                case "4":
+                case "3":
                     (new SweetHome()).main();
                     break;
-                case "5":
-                    //熔炉室逻辑
-                    break;
-                case "6":
+                case "4":
+                    HomeInit.mission.operation();
                     //任务系统逻辑
                     break;
-                case "7":
+                case "5":
                     Clock.getInstance().updateState(1);
-
+                    HomeInit.daily.updateState();
+                    HomeInit.mission.setDaily();
                     break;
                 default:
                     System.out.println("输入不合法，请重试");
@@ -77,14 +73,12 @@ public class App {
             }
 
             System.out.println("======================================");
-            System.out.println("*          1. 查看背包物品             *");
-            System.out.println("*          2. 进入矿区                 *");
-            System.out.println("*          3. 进入农场                 *");
-            System.out.println("*          4. 回家                     *");
-            System.out.println("*          5. 进入熔炉室               *");
-            System.out.println("*          6. 进入任务系统             *");
-            System.out.println("*          7. 进入下一天               *");
-            System.out.println("*          0. 退出                     *");
+            System.out.println("*          1. 进入矿区                 *");
+            System.out.println("*          2. 进入农场                 *");
+            System.out.println("*          3. 回家                    *");
+            System.out.println("*          4. 进入任务系统             *");
+            System.out.println("*          5. 进入下一天               *");
+            System.out.println("*          0. 退出                    *");
             System.out.println("======================================");
             System.out.println("请选择：");
         }

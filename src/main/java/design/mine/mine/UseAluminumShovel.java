@@ -28,12 +28,15 @@ public class UseAluminumShovel extends UseToolsServiceMineralImpl {
      */
 
     public void useDurability(){
+
+        tool = findTool(tools.getMiningToolsList());
         if(tool != null) {
             int durability = tool.getDurability();
-            if (durability - 8 >= 0) {
-                tool.setDurability(durability - 8);
+            if (durability - 20 >= 0) {
+                tool.setDurability(durability - 20);
                 System.out.println("当前工具耐久度为：" + tool.getDurability());
-            } else{
+            }
+            if(tool.getDurability() -20 ==  0){
                 System.out.println("该工具使用过度，已经损坏。");
                 backpack.removeTool(index);
             }
@@ -81,11 +84,11 @@ public class UseAluminumShovel extends UseToolsServiceMineralImpl {
         boolean isIron = chooseMineral("铝矿区");
         tool = findTool(tools.getMiningToolsList());
         if (tool == null) {
-            System.out.println("没有可用的工具，自动离开。");
+            System.out.println("没有可用的铝镐，自动离开。");
             return;
         }
         System.out.println("当前工具耐久度为：" + tool.getDurability());
-        if(tool.getDurability() >= 0 && isIron) {
+        if(tool.getDurability() > 0 && isIron) {
             System.out.println("使用工具中......");
             System.out.println("工具使用完毕！");
             useDurability();

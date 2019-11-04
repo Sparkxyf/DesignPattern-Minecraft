@@ -2,7 +2,7 @@ package design.farm;
 
 public class Cow extends Animal {
     @Override
-    String stringify() {
+    public String stringify() {
         if(this.state instanceof GrownState) {
             return "成年牛";
         }

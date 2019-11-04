@@ -11,6 +11,8 @@ public class SmelterCommandImpl extends SmelterCommand{
     }
 
     public void forgeTools(String mineName){
+        System.out.println("接到指令开始处理。");
+
         //矿石列表减少矿石
         String toolName = "";
         switch (mineName){
@@ -35,7 +37,7 @@ public class SmelterCommandImpl extends SmelterCommand{
         }
 
         //工具列表增添工具
-        MiningToolsBuilder builder = new MiningToolsBuilderImpl();
+        MiningToolsBuilderImpl builder = new MiningToolsBuilderImpl();
         MiningToolsDirector director = new MiningToolsDirector(builder);
         MiningTool tool = director.construct(toolName);
         backpack.addTool(tool);
