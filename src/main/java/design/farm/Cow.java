@@ -11,7 +11,7 @@ public class Cow extends Animal {
 
     @Override
     protected void init() {
-        grownAge = 3;
+        grownAge = 5;
         super.init();
     }
 }
