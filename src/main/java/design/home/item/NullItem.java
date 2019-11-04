@@ -4,7 +4,7 @@ public class NullItem extends AbstractItem {
 
     @Override
     public String getName() {
-        return "请先建立家具模板";
+        return "指定的家具序号无效！";
     }
 
     @Override

@@ -6,6 +6,7 @@ import design.home.tile.Tile;
 import design.home.tile.TileFlyweightInterface;
 import design.task.business.delegate.TaskBusinessDelegate;
 import design.task.business.delegate.TaskWorker;
+import design.task.*;
 
 import java.util.Scanner;
 
@@ -18,11 +19,11 @@ public class HomeDecoration {
         System.out.println("======================================");
         System.out.println("=============请选择操作===============");
         System.out.println("======================================");
-        System.out.println("*            1. 查看当前的装饰状态           *");
-        System.out.println("*            2. 请人进行圣诞节主题的装修           *");
-        System.out.println("*            3. 请人进行春节主题的装修            *");
-        System.out.println("*            4. 恢复为原始状态               *");
-        System.out.println("*            5. 退出               *");
+        System.out.println("*      1. 查看当前的装饰状态           *");
+        System.out.println("*    2. 请人进行圣诞节主题的装修       *");
+        System.out.println("*     3. 请人进行春节主题的装修        *");
+        System.out.println("*        4. 恢复为原始状态            *");
+        System.out.println("*             5. 退出                 *");
         System.out.println("======================================");
 
         while(scanner1.hasNext()){
@@ -30,7 +31,7 @@ public class HomeDecoration {
                 case "1":
                     MyHome.show();
                     break;
-                case "2":
+                case "2": //用业务代理模式实现
                     MyHome=new OriginalHome();
                     MyHome= new Christmas(MyHome);
                     taskBusinessDelegate.setType("Christmas");
@@ -39,12 +40,13 @@ public class HomeDecoration {
                     System.out.println("装修完成");
 
                     break;
-                case "3":
+                case "3": //用对象池模式实现
                     MyHome=new OriginalHome();
+                    TaskPool taskPool =new MyTaskPoolImpl();
+                    MyTask myTask = taskPool.getTask();
+                    myTask.doDecorate(MyHome);
+                    taskPool.returnTask(myTask);
                     MyHome=new SpringFestival(MyHome);
-                    taskBusinessDelegate.setType("SpringFestival");
-                    TaskWorker taskWorker=new TaskWorker(taskBusinessDelegate);
-                    taskWorker.doTask(new OriginalHome());
                     System.out.println("装修完成");
                     break ;
                 case "4":
@@ -60,12 +62,13 @@ public class HomeDecoration {
             System.out.println("======================================");
             System.out.println("=============请选择操作===============");
             System.out.println("======================================");
-            System.out.println("*            1. 查看当前的装饰状态           *");
-            System.out.println("*            2. 请人进行圣诞节主题的装修           *");
-            System.out.println("*            3. 请人进行春节主题的装修            *");
-            System.out.println("*            4. 恢复为原始状态               *");
-            System.out.println("*            5. 退出               *");
+            System.out.println("*      1. 查看当前的装饰状态           *");
+            System.out.println("*    2. 请人进行圣诞节主题的装修       *");
+            System.out.println("*     3. 请人进行春节主题的装修        *");
+            System.out.println("*        4. 恢复为原始状态            *");
+            System.out.println("*             5. 退出                 *");
             System.out.println("======================================");
+
         }
         scanner1.close();
     }
