@@ -9,7 +9,6 @@ public class TransferObjectTest {
     public void test(){
         FurnitureData furnitureData =new FurnitureData();
         furnitureData.addFurniture(new Furniture("木质","水纹","桌子"));
-
         furnitureData.addFurniture(new Furniture("木质","水纹","椅子"));
         furnitureData.addFurniture(new Furniture("铁质","水纹","椅子"));
 
