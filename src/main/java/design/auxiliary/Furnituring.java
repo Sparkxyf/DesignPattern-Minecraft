@@ -25,8 +25,8 @@ public class Furnituring {
         System.out.println("======================================");
         System.out.println("*         1. 自由添加家具             *");
         System.out.println("*            2. 查看家具              *");
-        System.out.println("*         3. 显示创建记录             *");
-        System.out.println("*    4. 从创建记录为模板新建家具       *");
+        System.out.println("*         3. 查看创建记录             *");
+        System.out.println("*         4. 修改创建记录             *");
         System.out.println("*             5. 退出                 *");
         System.out.println("======================================");
 
