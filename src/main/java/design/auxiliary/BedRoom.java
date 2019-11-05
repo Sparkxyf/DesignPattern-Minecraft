@@ -4,15 +4,16 @@ import design.farm.Clock;
 import design.home.room.LivingRoom;
 
 import java.util.Scanner;
+import design.home.tile.interceptor.*;
+import java.util.*;
 
 public class BedRoom {
     public static void operation(){
         Scanner scanner= new Scanner(System.in);
         System.out.println("是否睡觉并结束今天？(Y/N)");
         if(scanner.next().equals("Y")){
-            Clock.getInstance().updateState(1);
-            HomeInit.daily.updateState();
-            HomeInit.mission.setDaily();
+            Business proxy = (Business) JdkProxyExample.bind(new BusinessImpl(), "design.home.tile.interceptor.InterceptorImpl");
+            proxy.doBusiness();
         }
         else {
             System.out.println("是否回到客厅？(Y/N)");
