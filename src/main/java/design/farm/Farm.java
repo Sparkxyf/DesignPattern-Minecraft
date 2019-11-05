@@ -20,10 +20,10 @@ public class Farm extends FarmLand implements Cloneable {
 
     public void setBuyer(String animal){
         if(animal.equals("chicken")){
-            animalBuyer = new ChickenAdapter();
+            animalBuyer = ChickenAdapter.getInstance();
         }
         else{
-            animalBuyer = new CowAdapter();
+            animalBuyer = CowAdapter.getInstance();
         }
     }
 
