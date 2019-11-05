@@ -55,13 +55,14 @@ public class SweetHome {
                     App.menu();
             }
             System.out.println("======================================");
-            System.out.println("===============你在家里===============");
+            System.out.println("=============你回到了家===============");
             System.out.println("======================================");
             System.out.println("*            1. 装饰地毯             *");
             System.out.println("*            2. 装饰屋子             *");
-            System.out.println("*           3. 查看留言版            *");
-            System.out.println("*            4. 进入卧室             *");
-            System.out.println("*              5. 退出               *");
+            System.out.println("             3. 添加家具             *");
+            System.out.println("*           4. 查看留言版            *");
+            System.out.println("*            5. 进入卧室             *");
+            System.out.println("*              6. 退出               *");
             System.out.println("======================================");
         }
         scanner.close();
