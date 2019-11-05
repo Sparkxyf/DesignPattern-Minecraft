@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Field extends FarmLand implements Cloneable {
 
-    private ArrayList<Plant> plants = new ArrayList<>();
+    public ArrayList<Plant> plants = new ArrayList<>();
 
     private static Field proto = new Field();
     @Override

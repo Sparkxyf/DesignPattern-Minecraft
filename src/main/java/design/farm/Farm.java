@@ -1,16 +1,30 @@
 package design.farm;
 
+import design.farm.Adapter.AnimalBuyer;
+import design.farm.Adapter.ChickenAdapter;
+import design.farm.Adapter.CowAdapter;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class Farm extends FarmLand implements Cloneable {
 
-    private ArrayList<Animal> animals = new ArrayList<>();
+    public ArrayList<Animal> animals = new ArrayList<>();
 
     private static Farm proto = new Farm();
 
     public void setAnimals(ArrayList<Animal> animals) {
         this.animals = animals;
+    }
+
+    public AnimalBuyer animalBuyer;
+
+    public void setBuyer(String animal){
+        if(animal.equals("chicken")){
+            animalBuyer = new ChickenAdapter();
+        }
+        else{
+            animalBuyer = new CowAdapter();
+        }
     }
 
     @Override
@@ -65,39 +79,17 @@ public class Farm extends FarmLand implements Cloneable {
                     }
                     break;
                 case "2":
-                    System.out.println("======================================");
-                    System.out.println("*              1. 买鸡                *");
-                    System.out.println("*              2. 买牛                *");
-                    System.out.println("*              3. 返回                *");
-                    System.out.println("======================================");
-                    System.out.println("请选择：");
-                    if(scanner.hasNext()) {
-                        Animal newAnimal;
-                        try {
-                            switch (scanner.next()) {
-                                case "1":
-                                    newAnimal = AbstractFactory.getFactory(Chicken.class).createAnimal(Chicken.class);
-                                    newAnimal.setBelongTo(this);
-                                    animals.add(newAnimal);
-                                    System.out.println("购买成功");
-                                    break;
-                                case "2":
-                                    newAnimal = AbstractFactory.getFactory(Cow.class).createAnimal(Cow.class);
-                                    newAnimal.setBelongTo(this);
-                                    animals.add(newAnimal);
-                                    System.out.println("购买成功");
-                                    break;
-                                case "3":
-                                    break;
-                                default:
-                                    System.out.println("输入有误");
-                                    continue;
-                            }
-
-                        }
-                        catch (NullPointerException e) {
-                            System.out.println("购买失败");
-                        }
+                    if(animalBuyer.buy().equals("chicken")){
+                        Animal newAnimal = AbstractFactory.getFactory(Chicken.class).createAnimal(Chicken.class);
+                        newAnimal.setBelongTo(this);
+                        animals.add(newAnimal);
+                        System.out.println("购买成功");
+                    }
+                    else{
+                        Animal newAnimal = AbstractFactory.getFactory(Cow.class).createAnimal(Cow.class);
+                        newAnimal.setBelongTo(this);
+                        animals.add(newAnimal);
+                        System.out.println("购买成功");
                     }
                     break;
                 case "3":
