@@ -20,8 +20,5 @@ public class NullObjectTest {
         System.out.println(item2.getName());
         System.out.println(item3.getName());
 
-
-
-
     }
 }

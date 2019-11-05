@@ -1,6 +1,5 @@
 package design.task.interpreter;
 
-import com.sun.xml.internal.ws.api.FeatureConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

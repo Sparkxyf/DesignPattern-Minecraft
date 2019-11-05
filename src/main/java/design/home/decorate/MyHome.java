@@ -9,5 +9,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class MyHome {
 
-    private String name;
+    private   String name;
+
 }

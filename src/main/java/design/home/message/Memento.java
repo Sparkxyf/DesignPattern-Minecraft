@@ -8,4 +8,6 @@ import lombok.Setter;
 public class Memento {
     @Getter @Setter
     private String record;
+
+
 }
