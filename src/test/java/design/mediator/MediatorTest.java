@@ -3,21 +3,20 @@ package design.mediator;
 import design.mine.backpack.BackpackMediatorImpl;
 import org.junit.Test;
 
+import java.io.IOException;
+
 import static org.junit.Assert.*;
 
 public class MediatorTest {
 
-    @Test
-    public void welcomeTest() {
-        BackpackMediatorImpl mediator = new BackpackMediatorImpl();
-        System.out.println("test message:");
-        mediator.welcome();
-    }
+    BackpackMediatorImpl robot=new BackpackMediatorImpl();
+
 
     @Test
-    public void navigationTest() {
-        BackpackMediatorImpl mediator = new BackpackMediatorImpl();
-        System.out.println("test message:");
-        mediator.navigation();
+    public void test() throws IOException {
+        System.out.println("了解熔炉室");
+        robot.displaySmelter();
+        System.out.println("了解矿山");
+        robot.displayMine();
     }
 }
